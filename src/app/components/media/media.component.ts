@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './media.html',
   styleUrl: './media.css',
 })
-export class Media {}
+export class MediaComponent {}
