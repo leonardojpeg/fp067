@@ -1,16 +1,21 @@
+<header>
+    <h1 class="titulo">EQUIPO BASKET</h1>
+    <h2>Milwaukee Bucks</h2>
+</header>
 <div class="container">
-  <h1 class="titulo">EQUIPO BASKET</h1>
-  <hr>
-  
-  <div class="row">
-      <div class="app-players">
-          <app-players></app-players>
-      </div>
-
-      <div class="app-detail">
-          <app-detail></app-detail>
-          <hr>
-          <app-media></app-media>
-      </div>
-  </div>
+    <hr>
+    <div class="row">
+        <div class="app-players">
+            <app-players (playerSelected)="onPlayerSelected($event)"></app-players>
+        </div>
+        <hr>
+        <div class="app-detail">
+            <app-detail [player]="selectedPlayer"></app-detail>
+            <hr>
+            <app-media [player]="selectedPlayer"></app-media>
+        </div>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>
 </div>

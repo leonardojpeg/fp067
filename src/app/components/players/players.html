@@ -1,1 +1,14 @@
-<p>players works!</p>
+<div class="players-container">
+  <h3>Lista de Jugadores</h3>
+  <ul class="players-list" *ngIf="players.length > 0">
+    <li 
+      *ngFor="let player of players" 
+      [class.selected]="player === selectedPlayer"
+      (click)="onSelect(player)">
+      <div class="player-info">
+        <span class="player-name">{{ player.nombre }} {{ player.apellidos }}</span>
+        <span class="player-pos">{{ player.posicion }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

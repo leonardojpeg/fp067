@@ -1,1 +1,26 @@
-<p>detail works!</p>
+<div class="detail-container">
+  <div *ngIf="player; else unselected" class="player-card">
+    <div class="card-header">
+      <h3>{{ player.nombre }} {{ player.apellidos }}</h3>
+      <span class="badge">{{ player.posicion }}</span>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <strong>Edad:</strong> {{ player.edad }} años
+      </div>
+      <div class="info-row">
+        <strong>Altura:</strong> {{ player.altura }}
+      </div>
+      <div class="info-row">
+        <strong>Descripción:</strong>
+        <p>{{ player.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #unselected>
+    <div class="empty-state">
+      <p>Selecciona un jugador del listado para ver sus detalles</p>
+    </div>
+  </ng-template>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PlayersComponent } from './components/players/players.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { MediaComponent } from './components/media/media.component';
+import { Player } from './models/player.model';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,11 @@ import { MediaComponent } from './components/media/media.component';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent { // Verifica que posi AppComponent aquí
+export class AppComponent {
   title = 'EQUIPO BASKET';
+  selectedPlayer?: Player;
+
+  onPlayerSelected(player: Player) {
+    this.selectedPlayer = player;
+  }
 }

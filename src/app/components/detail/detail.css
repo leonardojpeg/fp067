@@ -1,0 +1,54 @@
+.detail-container {
+  padding: 15px;
+  background-color: #fcfcfc;
+  min-height: 200px;
+}
+
+.player-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.card-header {
+  background-color: #004d40;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.badge {
+  background-color: #ffb300;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.info-row {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: #777;
+  font-style: italic;
+  font-size: 1.2em;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+}

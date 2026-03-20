@@ -4,7 +4,7 @@
   
   "compileOnSave": false,
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
   "allowSyntheticDefaultImports": true,
     "strict": true,
     "noImplicitOverride": true,

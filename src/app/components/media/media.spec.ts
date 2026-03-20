@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Media } from './media';
+import { MediaComponent } from './media.component';
 
-describe('Media', () => {
-  let component: Media;
-  let fixture: ComponentFixture<Media>;
+describe('MediaComponent', () => {
+  let component: MediaComponent;
+  let fixture: ComponentFixture<MediaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Media],
+      imports: [MediaComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Media);
+    fixture = TestBed.createComponent(MediaComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

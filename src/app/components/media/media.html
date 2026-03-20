@@ -1,1 +1,27 @@
-<p>media works!</p>
+<div class="media-container" *ngIf="player; else unselected">
+  
+  <div class="media-section" *ngIf="player.imagen">
+    <h4>Imagen de {{ player.nombre }}</h4>
+    <img [src]="player.imagen" [alt]="'Imagen de ' + player.nombre" class="player-image">
+  </div>
+  
+  <div class="media-section" *ngIf="safeVideoUrl">
+    <h4>Video destacado</h4>
+    <div class="video-wrapper">
+      <iframe 
+        [src]="safeVideoUrl" 
+        title="Video destacado de {{ player.nombre }}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #unselected>
+  <div class="empty-state">
+    <p>Selecciona un jugador para ver su contenido multimedia</p>
+  </div>
+</ng-template>

@@ -1,0 +1,43 @@
+.players-container {
+  padding: 15px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  height: 100%;
+}
+
+.players-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.players-list li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.players-list li:hover {
+  background-color: #e0f7fa;
+  transform: translateX(5px);
+}
+
+.players-list li.selected {
+  background-color: #00796b;
+  color: white;
+  border-color: #004d40;
+}
+
+.player-name {
+  font-weight: bold;
+  display: block;
+}
+
+.player-pos {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
