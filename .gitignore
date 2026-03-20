@@ -42,3 +42,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignorar videos grandes
+public/assets/videos/*.mp4

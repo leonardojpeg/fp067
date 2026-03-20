@@ -1,8 +1,14 @@
 <div class="players-container">
   <h3>Lista de Jugadores</h3>
+  
+  <div class="filters">
+    <input type="text" placeholder="Buscar por nombre..." [(ngModel)]="searchText" class="filter-input">
+    <input type="text" placeholder="Buscar por posición..." [(ngModel)]="searchPosicion" class="filter-input">
+  </div>
+
   <ul class="players-list" *ngIf="players.length > 0">
     <li 
-      *ngFor="let player of players" 
+      *ngFor="let player of players | filterPlayers: searchText : searchPosicion" 
       [class.selected]="player === selectedPlayer"
       (click)="onSelect(player)">
       <div class="player-info">

@@ -4,8 +4,12 @@
   
   "compileOnSave": false,
   "compilerOptions": {
-    "moduleResolution": "bundler",
-  "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@angular/core/testing": ["node_modules/@angular/core/types/testing.d.ts"]
+    },
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

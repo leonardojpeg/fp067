@@ -1,6 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Player } from '../../models/player.model';
 
 @Component({
@@ -12,15 +11,34 @@ import { Player } from '../../models/player.model';
 })
 export class MediaComponent implements OnChanges {
   @Input() player?: Player;
-  safeVideoUrl?: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) { }
+  @ViewChild('mediaVideo') videoElement!: ElementRef<HTMLVideoElement>;
+  
+  isMuted: boolean = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['player'] && this.player && this.player.videoUrl) {
-      this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.player.videoUrl);
-    } else {
-      this.safeVideoUrl = undefined;
+    if (changes['player']) {
+      // Reset mute status when changing player
+      this.isMuted = false;
+      if (this.videoElement) {
+        this.videoElement.nativeElement.load(); // Reload video for new src
+      }
     }
+  }
+
+  playVideo(): void {
+    if (this.videoElement) {
+      this.videoElement.nativeElement.play();
+    }
+  }
+
+  pauseVideo(): void {
+    if (this.videoElement) {
+      this.videoElement.nativeElement.pause();
+    }
+  }
+
+  toggleMute(): void {
+    this.isMuted = !this.isMuted;
   }
 }

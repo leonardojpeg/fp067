@@ -1,5 +1,83 @@
-header {
-    background-color: #f5f5f5;
-    text-align: center;
-    padding: 20px;
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: var(--bucks-green);
+  color: var(--bucks-cream);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.fw-bold {
+  font-weight: 800;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.dashboard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.sidebar-players {
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 100px;
+  overflow-y: auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--text-primary);
+  color: var(--border-color);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@media (max-width: 992px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar-players {
+    height: auto;
+    position: relative;
+    top: 0;
+  }
 }

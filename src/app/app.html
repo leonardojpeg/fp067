@@ -1,21 +1,23 @@
-<header>
-    <h1 class="titulo">EQUIPO BASKET</h1>
-    <h2>Milwaukee Bucks</h2>
-</header>
-<div class="container">
-    <hr>
-    <div class="row">
-        <div class="app-players">
+<div class="app-layout">
+    <header class="app-header">
+        <div class="header-content">
+            <div class="fw-bold">EQUIPO BASKET</div>
+            <h2 class="team-name">Milwaukee Bucks</h2>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <aside class="sidebar-players">
             <app-players (playerSelected)="onPlayerSelected($event)"></app-players>
-        </div>
-        <hr>
-        <div class="app-detail">
+        </aside>
+
+        <section class="main-content">
             <app-detail [player]="selectedPlayer"></app-detail>
-            <hr>
             <app-media [player]="selectedPlayer"></app-media>
-        </div>
-    </div>
-    <footer>
-        <p>Footer</p>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 Equipo Basket - Proyecto Frontend Milwaukee Bucks</p>
     </footer>
 </div>

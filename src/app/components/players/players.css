@@ -1,43 +1,103 @@
 .players-container {
-  padding: 15px;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
   height: 100%;
+}
+
+.players-container h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--bucks-green);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.filter-input:focus {
+  border-color: var(--bucks-green);
+  box-shadow: 0 0 0 3px rgba(0, 71, 27, 0.1);
+  background-color: white;
 }
 
 .players-list {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .players-list li {
-  padding: 10px;
-  margin-bottom: 5px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
   cursor: pointer;
-  border: 1px solid #eee;
-  transition: background-color 0.2s, transform 0.1s;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid transparent;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .players-list li:hover {
-  background-color: #e0f7fa;
-  transform: translateX(5px);
+  background-color: #F8FAF0; /* subtle green tint */
+  transform: translateX(4px);
+  border-left-color: rgba(0, 71, 27, 0.3);
 }
 
 .players-list li.selected {
-  background-color: #00796b;
-  color: white;
-  border-color: #004d40;
+  background-color: var(--bucks-green);
+  color: var(--bucks-cream);
+  border-left-color: var(--bucks-cream);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .player-name {
-  font-weight: bold;
-  display: block;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.players-list li:not(.selected) .player-name {
+  color: var(--text-primary);
 }
 
 .player-pos {
-  font-size: 0.85em;
-  opacity: 0.8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.players-list li:not(.selected) .player-pos {
+  color: var(--text-secondary);
+}
+
+.players-list li.selected .player-pos {
+  color: rgba(238, 225, 198, 0.8); /* Faded cream */
 }

@@ -1,54 +1,75 @@
 .detail-container {
-  padding: 15px;
-  background-color: #fcfcfc;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
   min-height: 200px;
 }
 
 .player-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .card-header {
-  background-color: #004d40;
-  color: white;
-  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
 }
 
 .card-header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--bucks-green);
+  letter-spacing: -0.5px;
   margin: 0;
 }
 
 .badge {
-  background-color: #ffb300;
-  color: #333;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 0.85em;
+  background-color: var(--bucks-cream);
+  color: var(--bucks-green);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card-body {
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
 .info-row {
-  margin-bottom: 10px;
-  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-row strong {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-row p {
+  line-height: 1.6;
 }
 
 .empty-state {
   text-align: center;
-  padding: 50px 20px;
-  color: #777;
-  font-style: italic;
-  font-size: 1.2em;
-  border: 2px dashed #ddd;
-  border-radius: 8px;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  background: var(--bg-color);
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  font-size: 1.1rem;
 }

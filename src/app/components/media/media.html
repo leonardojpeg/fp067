@@ -5,16 +5,17 @@
     <img [src]="player.imagen" [alt]="'Imagen de ' + player.nombre" class="player-image">
   </div>
   
-  <div class="media-section" *ngIf="safeVideoUrl">
+  <div class="media-section" *ngIf="player.videoUrl">
     <h4>Video destacado</h4>
     <div class="video-wrapper">
-      <iframe 
-        [src]="safeVideoUrl" 
-        title="Video destacado de {{ player.nombre }}" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
+      <video #mediaVideo [src]="player.videoUrl" width="100%" [muted]="isMuted" controls preload="metadata"></video>
+      <div class="video-controls mt-2">
+        <button class="btn btn-primary" (click)="playVideo()">Play</button>
+        <button class="btn btn-secondary ms-2" (click)="pauseVideo()">Pause</button>
+        <button class="btn btn-outline-dark ms-2" (click)="toggleMute()">
+          {{ isMuted ? 'Unmute' : 'Mute' }}
+        </button>
+      </div>
     </div>
   </div>
 
