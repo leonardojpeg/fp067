@@ -1,0 +1,33 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-danger text-white">
+    <h5 class="mb-0">Plantilla</h5>
+  </div>
+
+  <div class="p-3 bg-light border-bottom">
+    <input 
+      type="text" 
+      class="form-control form-control-sm" 
+      placeholder="🔍 Buscar por nombre o posición..." 
+      [(ngModel)]="searchText">
+  </div>
+
+  <div class="list-group list-group-flush">
+    <button 
+      *ngFor="let j of jugadores | filter:searchText" 
+      (click)="seleccionar(j)" 
+      class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      
+      <div class="text-start">
+        <div class="fw-bold text-dark">{{ j.nombre }} {{ j.apellidos }}</div>
+        <small class="text-muted">{{ j.posicion }}</small>
+      </div>
+      
+      <span class="text-muted small">{{ j.altura }}</span>
+
+    </button>
+  </div>
+
+  <div *ngIf="(jugadores | filter:searchText).length === 0" class="p-3 text-center text-muted">
+    No se han encontrado jugadores.
+  </div>
+</div>
